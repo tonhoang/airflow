@@ -120,7 +120,13 @@ with DAG(
         depends_on_past=False,
         bash_command=templated_command,
     )
+    t4 = S3KeySensor(
+        task_id="sensor_icos_s3",
+        bucket_name='ss-backup',
+        bucket_key='data.csv'
+        aws_conn_id='icos'
+    ) 
     # [END jinja_template]
 
-    t1 >> [t2, t3]
+    t1 >> [t2, t3, t4]
 # [END tutorial]
