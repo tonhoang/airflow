@@ -29,7 +29,7 @@ from textwrap import dedent
 
 # The DAG object; we'll need this to instantiate a DAG
 from airflow import DAG
-
+from airflow.operators.sensors import S3KeySensor
 # Operators; we need this to operate!
 from airflow.operators.bash import BashOperator
 
