@@ -122,7 +122,7 @@ with DAG(
     )
     t4 = S3KeySensor(
         task_id="sensor_icos_s3",
-        bucket_name='ss-backup',
+        bucket_name='logs',
         bucket_key='data.csv',
         aws_conn_id='icos'
     )
